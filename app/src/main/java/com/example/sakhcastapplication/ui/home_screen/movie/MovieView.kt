@@ -1,4 +1,4 @@
-package com.example.sakhcastapplication.ui.home_screen
+package com.example.sakhcastapplication.ui.home_screen.movie
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -11,59 +11,66 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapplication.Dimens
 import com.example.sakhcastapplication.R
+import com.example.sakhcastapplication.model.Movie
 import com.example.sakhcastapplication.model.Series
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
 @Preview(showBackground = true)
 @Composable
-fun x() {
+fun PreviewMovieItemView() {
     SakhCastApplicationTheme(darkTheme = true) {
-        SeriesItemView(series = Series(1, "Сериал 1", 9.0, 10.0, 2022, "1 Сезон 23 Cерии"))
+        MovieItemView(
+            movie = Movie(
+                1,
+                "Фильм 1",
+                9.0,
+                10.0,
+                2022,
+                "1ч 30 мин"
+            )
+        )
     }
 }
 
 @Composable
-fun SeriesItemView(series: Series) {
-    Box() {
+fun MovieItemView(movie: Movie) {
+    Box {
         Column() {
-            SeriesCard(series)
-            Text(text = series.title, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+            MovieCard(movie)
+            Text(text = movie.title, fontSize = 12.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(4.dp))
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.width(160.dp)
+                modifier = Modifier
+                    .width(160.dp)
+                    .padding(bottom = Dimens.mainPadding)
             ) {
-                Text(text = series.year.toString(), fontSize = 12.sp)
-                Text(text = series.totalSeries, fontSize = 12.sp)
+                Text(text = movie.releaseYear.toString(), fontSize = 12.sp)
+                Text(text = movie.duration, fontSize = 12.sp)
             }
         }
     }
 }
 
 @Composable
-fun SeriesCard(series: Series) {
+fun MovieCard(movie: Movie) {
     Card(
         modifier = Modifier
             .padding(top = Dimens.mainPadding, end = Dimens.mainPadding)
@@ -92,14 +99,14 @@ fun SeriesCard(series: Series) {
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Text("IMDB", color = Color.White, fontSize = 10.sp)
-                    Text(series.imdbRating.toString(), color = Color.White, fontSize = 8.sp)
+                    Text(movie.imdbRating.toString(), color = Color.White, fontSize = 8.sp)
                 }
                 Column(
                     modifier = Modifier.weight(1f),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text("Кинопоиск", color = Color.White, fontSize = 10.sp)
-                    Text(series.kinopoiskRating.toString(), color = Color.White, fontSize = 8.sp)
+                    Text(movie.kinopoiskRating.toString(), color = Color.White, fontSize = 8.sp)
                 }
             }
         }
