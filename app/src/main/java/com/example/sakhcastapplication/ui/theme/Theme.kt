@@ -13,6 +13,8 @@ import androidx.compose.ui.platform.LocalContext
 private val DarkColorScheme = darkColorScheme(
     primary = charcoalGray,
     secondary = coolGray,
+    tertiary = charcoalGrayTransparent,
+    onSecondaryContainer = grayTransparent,
     onPrimary = pastelLavender,
     onSecondary = lavenderMist,
 )
@@ -20,9 +22,9 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
     primary = pastelLavender,
     secondary = lavenderMist,
+    tertiary = pastelLavenderTransition,
     onPrimary = charcoalGray,
-    onSecondary = charcoalGray
-
+    onSecondary = charcoalGray,
 )
 
 @Composable
