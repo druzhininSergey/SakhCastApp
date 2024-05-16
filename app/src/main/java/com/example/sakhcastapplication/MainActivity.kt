@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
@@ -21,7 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.example.sakhcastapplication.ui.catalog_screen.CatalogScreen
-import com.example.sakhcastapplication.ui.home_screen.HomeScreen
+import com.example.sakhcastapplication.ui.favorites_screen.FavoritesScreen
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -54,14 +53,15 @@ class MainActivity : ComponentActivity() {
                         )
                     },
                     bottomBar = {
-                        BottomAppBar (
+                        BottomAppBar(
                             containerColor = MaterialTheme.colorScheme.primary
-                        ){}
+                        ) {}
                     },
                     containerColor = MaterialTheme.colorScheme.primary
                 ) {
 //                    HomeScreen(paddingValues = it)
-                    CatalogScreen(it)
+//                    CatalogScreen(it)
+                    FavoritesScreen(it)
                 }
             }
         }

@@ -2,6 +2,7 @@ package com.example.sakhcastapplication.ui.home_screen.movie
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,7 +30,6 @@ import androidx.compose.ui.unit.sp
 import com.example.sakhcastapplication.Dimens
 import com.example.sakhcastapplication.R
 import com.example.sakhcastapplication.model.Movie
-import com.example.sakhcastapplication.model.Series
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
 @Preview(showBackground = true)
@@ -75,7 +75,8 @@ fun MovieCard(movie: Movie) {
         modifier = Modifier
             .padding(top = Dimens.mainPadding, end = Dimens.mainPadding)
             .width(160.dp)
-            .height(240.dp),
+            .height(240.dp)
+            .clickable {  },
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(),
     ) {
