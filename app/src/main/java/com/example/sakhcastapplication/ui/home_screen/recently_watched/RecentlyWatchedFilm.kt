@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -75,7 +76,7 @@ fun RecentlyWatchedMovie(movie: Movie) {
                         .fillMaxWidth()
                         .align(Alignment.Start),
                     text = movie.title,
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -84,12 +85,11 @@ fun RecentlyWatchedMovie(movie: Movie) {
                         .fillMaxWidth()
                         .align(Alignment.Start),
                     text = movie.duration,
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
-
         }
     }
 }

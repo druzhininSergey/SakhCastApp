@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -75,7 +76,7 @@ fun RecentlyWatchedSeries(series: Series) {
                         .fillMaxWidth()
                         .align(Alignment.Start),
                     text = series.title,
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -84,7 +85,7 @@ fun RecentlyWatchedSeries(series: Series) {
                         .fillMaxWidth()
                         .align(Alignment.Start),
                     text = series.totalSeries,
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )

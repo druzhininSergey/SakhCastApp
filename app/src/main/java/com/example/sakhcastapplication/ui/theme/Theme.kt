@@ -11,10 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = charcoalGray,
+    primary = deepCharcoal,
     secondary = coolGray,
     tertiary = charcoalGrayTransparent,
-    onSecondaryContainer = grayTransparent,
     onPrimary = pastelLavender,
     onSecondary = lavenderMist,
 )
@@ -23,22 +22,22 @@ private val LightColorScheme = lightColorScheme(
     primary = pastelLavender,
     secondary = lavenderMist,
     tertiary = pastelLavenderTransition,
-    onPrimary = charcoalGray,
-    onSecondary = charcoalGray,
+    onPrimary = deepCharcoal,
+    onSecondary = deepCharcoal,
 )
 
 @Composable
 fun SakhCastApplicationTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-//        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-//            val context = LocalContext.current
-//            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-//        }
+        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+            val context = LocalContext.current
+            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+        }
 
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
@@ -50,3 +49,4 @@ fun SakhCastApplicationTheme(
         content = content
     )
 }
+

@@ -30,6 +30,26 @@ object Samples {
         Movie(10, "Фильм 10", 8.0, 11.8, 2020, "2ч 25 мин")
     )
 
+    fun getMoviesCategories(): List<String> = listOf(
+        "Все",
+        "Свежее",
+        "Новинки",
+        "Сейчас смотрят",
+        "Мировой топ",
+        "Российский топ",
+        "Жанры"
+    )
+
+    fun getSeriesCategories(): List<String> = listOf(
+        "Все",
+        "Свежее",
+        "Новинки",
+        "Сейчас смотрят",
+        "Мировой топ",
+        "Российский топ",
+        "Жанры"
+    )
+
     fun getAllSeries(): List<Series> = seriesList
     fun getAllMovies(): List<Movie> = movieList
 

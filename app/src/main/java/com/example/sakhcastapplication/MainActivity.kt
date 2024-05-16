@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import com.example.sakhcastapplication.ui.catalog_screen.CatalogScreen
 import com.example.sakhcastapplication.ui.home_screen.HomeScreen
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
@@ -49,16 +50,18 @@ class MainActivity : ComponentActivity() {
                                     )
                                 }
                             },
-                            colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.tertiary),
+                            colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.primary),
                         )
                     },
                     bottomBar = {
-                        BottomAppBar {
-
-                        }
-                    }
+                        BottomAppBar (
+                            containerColor = MaterialTheme.colorScheme.primary
+                        ){}
+                    },
+                    containerColor = MaterialTheme.colorScheme.primary
                 ) {
-                    HomeScreen(it)
+//                    HomeScreen(paddingValues = it)
+                    CatalogScreen(it)
                 }
             }
         }
