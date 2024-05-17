@@ -4,64 +4,27 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
-import com.example.sakhcastapplication.ui.catalog_screen.CatalogScreen
-import com.example.sakhcastapplication.ui.favorites_screen.FavoritesScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.sakhcastapplication.ui.bottom_app_bar.BottomBar
+import com.example.sakhcastapplication.ui.bottom_app_bar.NavGraph
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
+import com.example.sakhcastapplication.ui.top_app_bar.TopBar
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val navController = rememberNavController()
             SakhCastApplicationTheme(darkTheme = true) {
                 Scaffold(
-                    topBar = {
-                        TopAppBar(
-                            title = {
-                                Text(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    textAlign = TextAlign.Center,
-                                    text = stringResource(R.string.sakh_cast)
-                                )
-                            },
-                            actions = {
-                                IconButton(onClick = {}) {
-                                    Icon(
-                                        modifier = Modifier.padding(),
-                                        painter = painterResource(id = R.drawable.ic_accaunt),
-                                        contentDescription = "",
-                                    )
-                                }
-                            },
-                            colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.primary),
-                        )
-                    },
-                    bottomBar = {
-                        BottomAppBar(
-                            containerColor = MaterialTheme.colorScheme.primary
-                        ) {}
-                    },
+                    topBar = { TopBar() },
+                    bottomBar = { BottomBar(navController) },
                     containerColor = MaterialTheme.colorScheme.primary
                 ) {
-//                    HomeScreen(paddingValues = it)
-//                    CatalogScreen(it)
-                    FavoritesScreen(it)
+                    NavGraph(navHostController = navController, paddingValues = it)
                 }
             }
         }

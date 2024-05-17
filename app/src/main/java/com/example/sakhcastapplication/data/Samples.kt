@@ -1,8 +1,8 @@
 package com.example.sakhcastapplication.data
 
 import com.example.sakhcastapplication.model.Movie
+import com.example.sakhcastapplication.model.Notification
 import com.example.sakhcastapplication.model.Series
-
 
 object Samples {
     val seriesList: List<Series> = listOf(
@@ -29,6 +29,36 @@ object Samples {
         Movie(9, "Фильм 9", 8.7, 13.0, 2021, "2ч 30 мин"),
         Movie(10, "Фильм 10", 8.0, 11.8, 2020, "2ч 25 мин")
     )
+    val notificationList = listOf<Notification>(
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+        Notification(text = "Вышел 3-й эпизод 1-го сезона сериала \"Городок\".<br><a href='https://sakh.tv/watch/the.town/01/03/viruse_project/'>Перейти к просмотру.</a>"),
+    )
 
     fun getMoviesCategories(): List<String> = listOf(
         "Все",
@@ -49,6 +79,8 @@ object Samples {
         "Российский топ",
         "Жанры"
     )
+
+    fun getAllNotifications(): List<Notification> = notificationList
 
     fun getAllSeries(): List<Series> = seriesList
     fun getAllMovies(): List<Movie> = movieList

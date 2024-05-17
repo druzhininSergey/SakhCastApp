@@ -29,7 +29,7 @@ fun MoviesPage(moviesWillWatch: List<Movie>) {
             horizontalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Фильмы",
+                text = "Буду смотреть",
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp
             )

@@ -19,7 +19,7 @@ import com.example.sakhcastapplication.Dimens
 import com.example.sakhcastapplication.model.Series
 
 @Composable
-fun SeriesCategoryView(seriesList: List<Series>){
+fun SeriesCategoryView(seriesList: List<Series>) {
     Row(
         modifier = Modifier.padding(top = Dimens.mainPadding),
         verticalAlignment = Alignment.CenterVertically,
