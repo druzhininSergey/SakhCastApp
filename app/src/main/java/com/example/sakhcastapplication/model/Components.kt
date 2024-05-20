@@ -1,22 +1,37 @@
 package com.example.sakhcastapplication.model
 
-data class Series(
+data class SeriesCard(
     val id: Int,
-    val title: String,
+    val linkUrl: String? = null,
+    val name: String,
+    val imdb: Boolean? = null,
+    val kinopoisk: Boolean? = null,
     val imdbRating: Double,
     val kinopoiskRating: Double,
+    val coverImageAltUrl: String? = null, // Добавлять в конце ссылки .webp для карточек(мелкие), .avif для больших изображений
     val releaseYear: Int,
-    val totalSeries: String
+    val totalSeasonsAndSeries: String,
+    val newEpisodes: Boolean? = null,
+    val progress: Boolean? = null,
+    val available: Boolean? = null,
 )
 
-data class Movie(
+data class MovieCard(
     val id: Int,
-    val title: String,
+    val linkUrl: String? = null,
+    val ruTitle: String,
+    val origin_title: String? = null,
+    val imdb: Boolean? = null,
+    val kinopoisk: Boolean? = null,
     val imdbRating: Double,
     val kinopoiskRating: Double,
-    val releaseYear: Int,
-    val duration: String
+    val coverImageAltUrl: String? = null, // Добавлять в конце ссылки .webp для карточек(мелкие), .avif для больших изображений
+    val releaseDate: String,
+    val duration: String,
+    val progress: Boolean? = null,
+    val available: Boolean? = null,
 )
+
 
 data class Notification(
     val id: Int? = null,
@@ -25,4 +40,10 @@ data class Notification(
     val subject: String? = null,
     val text: String,
     val isRead: Boolean = false,
+)
+
+data class UserData(
+    val userToken: String? = null,
+    val userLogin: String,
+    val userPassword: String,
 )
