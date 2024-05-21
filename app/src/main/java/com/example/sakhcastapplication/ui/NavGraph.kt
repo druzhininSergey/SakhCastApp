@@ -7,14 +7,16 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.sakhcastapplication.CATALOG_SCREEN
 import com.example.sakhcastapplication.FAVORITES_SCREEN
-import com.example.sakhcastapplication.MOVIE_CATEGORY_SCREEN
 import com.example.sakhcastapplication.HOME_SCREEN
 import com.example.sakhcastapplication.LOG_IN_SCREEN
+import com.example.sakhcastapplication.MOVIE_CATEGORY_SCREEN
 import com.example.sakhcastapplication.MOVIE_VIEW
 import com.example.sakhcastapplication.NOTIFICATION_SCREEN
 import com.example.sakhcastapplication.SEARCH_SCREEN
 import com.example.sakhcastapplication.SERIES_CATEGORY_SCREEN
 import com.example.sakhcastapplication.SERIES_VIEW
+import com.example.sakhcastapplication.ui.category_screens.MovieCategoryScreen
+import com.example.sakhcastapplication.ui.category_screens.SeriesCategoryScreen
 import com.example.sakhcastapplication.ui.log_in_screen.LogInScreen
 import com.example.sakhcastapplication.ui.main_screens.catalog_screen.CatalogScreen
 import com.example.sakhcastapplication.ui.movie_series_view.MovieView
@@ -40,7 +42,7 @@ fun NavGraph(
             HomeScreen(paddingValues = paddingValues)
         }
         composable(CATALOG_SCREEN) {
-            CatalogScreen(paddingValues = paddingValues)
+            CatalogScreen(paddingValues = paddingValues, navHostController)
         }
         composable(FAVORITES_SCREEN) {
             FavoritesScreen(paddingValues = paddingValues)
@@ -56,6 +58,12 @@ fun NavGraph(
         }
         composable(SERIES_VIEW) {
             SeriesView()
+        }
+        composable(MOVIE_CATEGORY_SCREEN){
+            MovieCategoryScreen(paddingValues)
+        }
+        composable(SERIES_CATEGORY_SCREEN){
+            SeriesCategoryScreen(paddingValues)
         }
     }
 }

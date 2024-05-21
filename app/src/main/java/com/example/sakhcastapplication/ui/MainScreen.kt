@@ -12,7 +12,11 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.sakhcastapplication.LOG_IN_SCREEN
+import com.example.sakhcastapplication.MOVIE_CATEGORY_SCREEN
+import com.example.sakhcastapplication.SERIES_CATEGORY_SCREEN
+import com.example.sakhcastapplication.SERIES_VIEW
 import com.example.sakhcastapplication.ui.log_in_screen.LogInScreen
+import com.example.sakhcastapplication.ui.top_bottom_bars.TopAppCategoryBar
 import com.example.sakhcastapplication.ui.top_bottom_bars.bottom_app_bar.BottomBar
 import com.example.sakhcastapplication.ui.top_bottom_bars.top_app_bar.TopBar
 
@@ -22,16 +26,25 @@ fun MainScreen() {
     val currentBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = currentBackStackEntry?.destination?.route
     var showBars by remember { mutableStateOf(currentDestination != LOG_IN_SCREEN) }
+    var showTopAppCategoryBar by rememberSaveable {
+        mutableStateOf(currentDestination == SERIES_CATEGORY_SCREEN || currentDestination == MOVIE_CATEGORY_SCREEN)
+    }
+
+    LaunchedEffect(currentDestination) {
+        showTopAppCategoryBar =
+            currentDestination == SERIES_CATEGORY_SCREEN || currentDestination == MOVIE_CATEGORY_SCREEN
+    }
     LaunchedEffect(currentDestination) {
         showBars = currentDestination != LOG_IN_SCREEN
     }
-//    var isLogin by rememberSaveable { mutableStateOf(false) }
-//
-//    if (!isLogin) {
-//        LogInScreen(navController = navController)
-//    } else {
+
     Scaffold(
-        topBar = { if (showBars) TopBar(navController) },
+        topBar = {
+            when {
+                showTopAppCategoryBar -> TopAppCategoryBar(navController = navController)
+                showBars -> TopBar(navController = navController)
+            }
+        },
         bottomBar = { if (showBars) BottomBar(navController) },
         containerColor = MaterialTheme.colorScheme.primary
     ) {
@@ -40,5 +53,4 @@ fun MainScreen() {
             paddingValues = it,
         )
     }
-//    }
 }

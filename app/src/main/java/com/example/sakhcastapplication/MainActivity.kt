@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.example.sakhcastapplication.ui.MainScreen
+import com.example.sakhcastapplication.ui.category_screens.SeriesCategoryScreen
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -14,6 +15,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SakhCastApplicationTheme(darkTheme = true) {
                 MainScreen()
+//                SeriesCategoryScreen()
 //                Surface (modifier = Modifier
 //                    .fillMaxSize()
 //                    .background(Color.Gray)){

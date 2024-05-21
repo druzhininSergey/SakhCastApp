@@ -1,7 +1,6 @@
 package com.example.sakhcastapplication.ui.main_screens.catalog_screen
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -27,13 +26,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.sakhcastapplication.data.Samples
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Preview(showBackground = true)
 @Composable
-fun CatalogScreen(paddingValues: PaddingValues) {
+fun CatalogScreen(paddingValues: PaddingValues, navHostController: NavHostController) {
     val tabList = listOf("Сериалы", "Фильмы")
     var tabIndex by remember {
         mutableIntStateOf(0)
@@ -83,7 +83,7 @@ fun CatalogScreen(paddingValues: PaddingValues) {
         ) { index ->
             val categories = if (index == 0) Samples.getSeriesCategories()
             else Samples.getMoviesCategories()
-            CatalogList(categories = categories)
+            CatalogList(categories = categories, navHostController, tabIndex)
         }
     }
 }

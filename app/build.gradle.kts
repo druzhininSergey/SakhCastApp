@@ -50,6 +50,8 @@ android {
 }
 
 dependencies {
+    //splashScreen
+    implementation (libs.androidx.core.splashscreen)
     //coil
     implementation(libs.coil)
     implementation(libs.androidx.navigation.compose)

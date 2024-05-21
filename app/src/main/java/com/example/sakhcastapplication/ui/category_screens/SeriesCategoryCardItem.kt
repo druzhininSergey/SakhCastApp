@@ -1,13 +1,13 @@
-package com.example.sakhcastapplication.ui.main_screens.home_screen.series
+package com.example.sakhcastapplication.ui.category_screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -34,9 +34,9 @@ import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewSeriesItemView() {
+fun PreviewSeriesCategoryCardItem() {
     SakhCastApplicationTheme() {
-        SeriesItemView(
+        SeriesCategoryCardItem(
             seriesCard = SeriesCard(
                 id = 1,
                 name = "Сериал 1",
@@ -50,10 +50,10 @@ fun PreviewSeriesItemView() {
 }
 
 @Composable
-fun SeriesItemView(seriesCard: SeriesCard) {
+fun SeriesCategoryCardItem(seriesCard: SeriesCard) {
     Box() {
         Column() {
-            SeriesCard(seriesCard)
+            SeriesCategoryCard(seriesCard)
             Text(
                 text = seriesCard.name,
                 fontSize = 12.sp,
@@ -63,7 +63,7 @@ fun SeriesItemView(seriesCard: SeriesCard) {
             Spacer(modifier = Modifier.height(4.dp))
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.width(150.dp)
+                modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
                     text = seriesCard.releaseYear.toString(), fontSize = 12.sp,
@@ -79,11 +79,10 @@ fun SeriesItemView(seriesCard: SeriesCard) {
 }
 
 @Composable
-fun SeriesCard(seriesCard: SeriesCard) {
+fun SeriesCategoryCard(seriesCard: SeriesCard) {
     Card(
         modifier = Modifier
-            .width(150.dp)
-            .height(220.dp),
+            .aspectRatio(0.682f),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(),
     ) {

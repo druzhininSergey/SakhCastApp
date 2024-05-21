@@ -1,18 +1,17 @@
-package com.example.sakhcastapplication.ui.main_screens.home_screen.series
+package com.example.sakhcastapplication.ui.category_screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -29,33 +28,34 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapplication.R
+import com.example.sakhcastapplication.model.MovieCard
 import com.example.sakhcastapplication.model.SeriesCard
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewSeriesItemView() {
+fun PreviewMovieCategoryCardItem() {
     SakhCastApplicationTheme() {
-        SeriesItemView(
-            seriesCard = SeriesCard(
+        MovieCategoryCardItem(
+            movieCard = MovieCard(
                 id = 1,
-                name = "Сериал 1",
+                ruTitle = "Фильм 1",
                 imdbRating = 9.0,
                 kinopoiskRating = 10.0,
-                releaseYear = 2022,
-                totalSeasonsAndSeries = "1 Сезон 23 Cерии"
+                releaseDate = "2022",
+                duration = "1час 34мин"
             )
         )
     }
 }
 
 @Composable
-fun SeriesItemView(seriesCard: SeriesCard) {
+fun MovieCategoryCardItem(movieCard: MovieCard) {
     Box() {
         Column() {
-            SeriesCard(seriesCard)
+            MovieCategoryCard(movieCard)
             Text(
-                text = seriesCard.name,
+                text = movieCard.ruTitle,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onPrimary
@@ -63,14 +63,14 @@ fun SeriesItemView(seriesCard: SeriesCard) {
             Spacer(modifier = Modifier.height(4.dp))
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.width(150.dp)
+                modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = seriesCard.releaseYear.toString(), fontSize = 12.sp,
+                    text = movieCard.releaseDate.toString(), fontSize = 12.sp,
                     color = MaterialTheme.colorScheme.onPrimary
                 )
                 Text(
-                    text = seriesCard.totalSeasonsAndSeries, fontSize = 12.sp,
+                    text = movieCard.duration, fontSize = 12.sp,
                     color = MaterialTheme.colorScheme.onPrimary
                 )
             }
@@ -79,11 +79,10 @@ fun SeriesItemView(seriesCard: SeriesCard) {
 }
 
 @Composable
-fun SeriesCard(seriesCard: SeriesCard) {
+fun MovieCategoryCard(movieCard: MovieCard) {
     Card(
         modifier = Modifier
-            .width(150.dp)
-            .height(220.dp),
+            .aspectRatio(0.682f),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(),
     ) {
@@ -91,7 +90,7 @@ fun SeriesCard(seriesCard: SeriesCard) {
             Image(
                 modifier = Modifier
                     .fillMaxSize(),
-                painter = painterResource(id = R.drawable.series_poster),
+                painter = painterResource(id = R.drawable.movie_poster),
                 contentDescription = null,
                 contentScale = ContentScale.FillBounds
             )
@@ -120,7 +119,7 @@ fun SeriesCard(seriesCard: SeriesCard) {
                         )
                         Text(
                             modifier = Modifier.padding(start = 3.dp),
-                            text = seriesCard.imdbRating.toString(),
+                            text = movieCard.imdbRating.toString(),
                             color = Color.White,
                             fontSize = 8.sp
                         )
@@ -144,7 +143,7 @@ fun SeriesCard(seriesCard: SeriesCard) {
                         )
                         Text(
                             modifier = Modifier.padding(start = 3.dp),
-                            text = seriesCard.kinopoiskRating.toString(),
+                            text = movieCard.kinopoiskRating.toString(),
                             color = Color.White,
                             fontSize = 8.sp
                         )
