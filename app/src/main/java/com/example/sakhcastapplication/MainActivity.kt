@@ -14,6 +14,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             SakhCastApplicationTheme(darkTheme = true) {
                 MainScreen()
+//                Surface (modifier = Modifier
+//                    .fillMaxSize()
+//                    .background(Color.Gray)){
+//                    MovieCategoryScreen()
+//                }
             }
         }
     }

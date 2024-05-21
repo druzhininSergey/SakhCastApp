@@ -48,6 +48,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.sakhcastapplication.HOME_SCREEN
 import com.example.sakhcastapplication.R
 import com.example.sakhcastapplication.data.Samples
 
@@ -120,7 +121,7 @@ fun LogInScreen(navController: NavHostController) {
         Log.i("!!!", "pas = $password")
         Log.i("!!!", "log = $login")
         Button(
-            onClick = {}, //TODO Реализовать передачу логина пароля на проверку
+            onClick = { navController.navigate(HOME_SCREEN) }, //TODO Реализовать передачу логина пароля на проверку
             shape = RoundedCornerShape(10.dp)
         ) {
             Text(text = "Войти")

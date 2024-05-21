@@ -56,7 +56,7 @@ fun CatalogScreen(paddingValues: PaddingValues) {
             indicator = { tabPositions ->
                 TabRowDefaults.Indicator(
                     Modifier.tabIndicatorOffset(tabPositions[tabIndex]),
-                    color = Color.Blue // Устанавливаем цвет индикатора
+                    color = Color.White
                 )
             }
         ) {
@@ -71,7 +71,7 @@ fun CatalogScreen(paddingValues: PaddingValues) {
                     text = {
                         Text(
                             text = text,
-                            color = if (index == tabIndex) Color.Blue else MaterialTheme.colorScheme.onPrimary
+                            color = MaterialTheme.colorScheme.onPrimary
                         )
                     },
                 )
