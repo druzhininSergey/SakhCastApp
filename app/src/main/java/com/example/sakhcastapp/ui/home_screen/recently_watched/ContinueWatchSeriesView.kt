@@ -1,11 +1,10 @@
-package com.example.sakhcastapplication.ui.main_screens.home_screen.recently_watched
+package com.example.sakhcastapp.ui.main_screens.home_screen.recently_watched
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -16,7 +15,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -24,10 +22,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.sakhcastapplication.Dimens
-import com.example.sakhcastapplication.R
-import com.example.sakhcastapplication.data.Samples
-import com.example.sakhcastapplication.model.SeriesCard
+import com.example.sakhcastapp.R
+import com.example.sakhcastapp.data.Samples
+import com.example.sakhcastapp.model.SeriesCard
 
 @Preview(showBackground = true)
 @Composable
@@ -42,12 +39,12 @@ fun ContinueWatchSeriesView(seriesCard: SeriesCard) {
         modifier = Modifier
             .height(234.dp)
             .width(416.dp)
-            .padding(Dimens.mainPadding)
+            .padding(16.dp)
     ) {
         Box {
             Image(
                 modifier = Modifier.fillMaxSize(),
-                painter = painterResource(id = R.drawable.backdrop_series),
+                painter = painterResource(id = R.drawable.series_backdrop),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
             )

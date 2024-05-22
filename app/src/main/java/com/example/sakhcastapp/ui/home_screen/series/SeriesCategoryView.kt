@@ -1,4 +1,4 @@
-package com.example.sakhcastapplication.ui.main_screens.home_screen.series
+package com.example.sakhcastapp.ui.main_screens.home_screen.series
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -16,13 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.sakhcastapplication.Dimens
-import com.example.sakhcastapplication.model.SeriesCard
+import com.example.sakhcastapp.model.SeriesCard
 
 @Composable
 fun SeriesCategoryView(seriesCardList: List<SeriesCard>) {
     Row(
-        modifier = Modifier.padding(start = Dimens.mainPadding),
+        modifier = Modifier.padding(start = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
@@ -38,9 +37,9 @@ fun SeriesCategoryView(seriesCardList: List<SeriesCard>) {
         )
     }
     LazyRow(
-        modifier = Modifier.padding(top = Dimens.mainPadding),
-        contentPadding = PaddingValues(start = Dimens.mainPadding, end = Dimens.mainPadding),
-        horizontalArrangement = Arrangement.spacedBy(Dimens.mainPadding)
+        modifier = Modifier.padding(top = 16.dp),
+        contentPadding = PaddingValues(start = 16.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         itemsIndexed(seriesCardList) { _, item ->
             SeriesItemView(seriesCard = item)

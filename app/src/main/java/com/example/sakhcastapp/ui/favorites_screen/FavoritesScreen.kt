@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.sakhcastapp.ui.FAVORITES_SCREEN
-import com.example.sakhcastapp.ui.SEARCH_SCREEN
 
 @Composable
 fun FavoritesScreen(paddingValues: PaddingValues) {

@@ -1,4 +1,4 @@
-package com.example.sakhcastapplication.ui.main_screens.home_screen.recently_watched
+package com.example.sakhcastapp.ui.main_screens.home_screen.recently_watched
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
@@ -15,9 +15,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.sakhcastapplication.Dimens
-import com.example.sakhcastapplication.data.Samples
+import com.example.sakhcastapp.data.Samples
 
 @OptIn(ExperimentalFoundationApi::class)
 @Preview
@@ -37,7 +37,7 @@ fun ContinueWatchView() {
     }
     Column {
         Text(
-            modifier = Modifier.padding(top = Dimens.mainPaddingHalf, start = Dimens.mainPadding),
+            modifier = Modifier.padding(top = 16.dp, start = 16.dp),
             text = "Продолжить просмотр",
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp

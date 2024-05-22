@@ -1,4 +1,4 @@
-package com.example.sakhcastapplication.ui.main_screens.home_screen.movie
+package com.example.sakhcastapp.ui.main_screens.home_screen.movie
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -27,8 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.R
+import com.example.sakhcastapp.model.MovieCard
 import com.example.sakhcastapp.ui.theme.SakhCastAppTheme
-import com.example.sakhcastapplication.model.MovieCard
 
 @Preview(showBackground = true)
 @Composable

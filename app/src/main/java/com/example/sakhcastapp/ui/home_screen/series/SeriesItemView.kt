@@ -1,4 +1,4 @@
-package com.example.sakhcastapplication.ui.main_screens.home_screen.series
+package com.example.sakhcastapp.ui.main_screens.home_screen.series
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -28,14 +28,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.sakhcastapplication.R
-import com.example.sakhcastapplication.model.SeriesCard
-import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
+import com.example.sakhcastapp.R
+import com.example.sakhcastapp.model.SeriesCard
+import com.example.sakhcastapp.ui.theme.SakhCastAppTheme
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewSeriesItemView() {
-    SakhCastApplicationTheme() {
+    SakhCastAppTheme() {
         SeriesItemView(
             seriesCard = SeriesCard(
                 id = 1,

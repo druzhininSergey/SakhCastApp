@@ -1,7 +1,8 @@
-package com.example.sakhcastapplication.data
+package com.example.sakhcastapp.data
 
-import com.example.sakhcastapplication.model.MovieCard
-import com.example.sakhcastapplication.model.SeriesCard
+import com.example.sakhcastapp.model.MovieCard
+import com.example.sakhcastapp.model.SeriesCard
+
 
 object Samples {
     val seriesCardList: List<SeriesCard> = listOf(
@@ -170,4 +171,7 @@ object Samples {
 
     fun getAllSeries(): List<SeriesCard> = seriesCardList
     fun getAllMovies(): List<MovieCard> = movieCardLists
+
+    fun getOneMovie(): MovieCard = movieCardLists[1]
+    fun getOneSeries(): SeriesCard = seriesCardList[1]
 }

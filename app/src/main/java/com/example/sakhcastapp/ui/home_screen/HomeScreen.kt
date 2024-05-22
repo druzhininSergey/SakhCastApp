@@ -1,22 +1,18 @@
 package com.example.sakhcastapp.ui.home_screen
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.sakhcastapplication.data.Samples
-import com.example.sakhcastapplication.ui.main_screens.home_screen.movie.MovieCategoryView
-import com.example.sakhcastapplication.ui.main_screens.home_screen.recently_watched.ContinueWatchView
-import com.example.sakhcastapplication.ui.main_screens.home_screen.series.SeriesCategoryView
+import com.example.sakhcastapp.data.Samples
+import com.example.sakhcastapp.ui.main_screens.home_screen.movie.MovieCategoryView
+import com.example.sakhcastapp.ui.main_screens.home_screen.recently_watched.ContinueWatchView
+import com.example.sakhcastapp.ui.main_screens.home_screen.series.SeriesCategoryView
 
 @Composable
 fun HomeScreen(paddingValues: PaddingValues) {
@@ -31,7 +27,7 @@ fun HomeScreen(paddingValues: PaddingValues) {
             .background(color = MaterialTheme.colorScheme.primary)
     ) {
         ContinueWatchView()
-        SeriesCategoryView(seriesList)
+        SeriesCategoryView(seriesCardList = seriesList)
         MovieCategoryView(movieCardList = movieList)
     }
 }

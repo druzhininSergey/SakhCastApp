@@ -1,4 +1,4 @@
-package com.example.sakhcastapplication.model
+package com.example.sakhcastapp.model
 
 data class SeriesCard(
     val id: Int,
