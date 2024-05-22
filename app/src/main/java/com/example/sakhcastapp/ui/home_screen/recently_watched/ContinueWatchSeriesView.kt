@@ -74,7 +74,7 @@ fun ContinueWatchSeriesView(seriesCard: SeriesCard) {
                     modifier = Modifier
                         .align(Alignment.Start),
                     text = seriesCard.name,
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = Color.White,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                 )
@@ -82,7 +82,7 @@ fun ContinueWatchSeriesView(seriesCard: SeriesCard) {
                     modifier = Modifier
                         .align(Alignment.Start),
                     text = seriesCard.totalSeasonsAndSeries,
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = Color.White,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )

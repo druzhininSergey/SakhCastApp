@@ -7,10 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -22,7 +19,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.R
 import com.example.sakhcastapp.data.Samples
@@ -74,7 +70,7 @@ fun ContinueWatchFilmView(movieCard: MovieCard) {
                     modifier = Modifier
                         .align(Alignment.Start),
                     text = movieCard.ruTitle,
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = Color.White,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -82,7 +78,7 @@ fun ContinueWatchFilmView(movieCard: MovieCard) {
                     modifier = Modifier
                         .align(Alignment.Start),
                     text = movieCard.duration,
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = Color.White,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )
