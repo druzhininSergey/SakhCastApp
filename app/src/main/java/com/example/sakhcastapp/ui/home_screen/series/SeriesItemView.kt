@@ -2,7 +2,6 @@ package com.example.sakhcastapp.ui.main_screens.home_screen.series
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -30,7 +28,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.R
 import com.example.sakhcastapp.model.SeriesCard
+import com.example.sakhcastapp.ui.POSTER_TAGS_BACKGROUND_ALPHA
 import com.example.sakhcastapp.ui.theme.SakhCastAppTheme
+import com.example.sakhcastapp.ui.theme.spacing
 
 @Preview(showBackground = true)
 @Composable
@@ -60,7 +60,7 @@ fun SeriesItemView(seriesCard: SeriesCard) {
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onPrimary
             )
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.smallPadding))
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.width(150.dp)
@@ -84,7 +84,7 @@ fun SeriesCard(seriesCard: SeriesCard) {
         modifier = Modifier
             .width(150.dp)
             .height(220.dp),
-        shape = RoundedCornerShape(10.dp),
+        shape = MaterialTheme.shapes.small,
         colors = CardDefaults.cardColors(),
     ) {
         Box {
@@ -97,7 +97,7 @@ fun SeriesCard(seriesCard: SeriesCard) {
             )
             Row(
                 modifier = Modifier
-                    .padding(8.dp)
+                    .padding(MaterialTheme.spacing.mainPaddingHalf)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
 
@@ -105,21 +105,21 @@ fun SeriesCard(seriesCard: SeriesCard) {
                 Box(
                     modifier = Modifier
                         .background(
-                            color = Color.Gray.copy(alpha = 0.8f),
-                            shape = RoundedCornerShape(8.dp)
+                            color = Color.Gray.copy(alpha = POSTER_TAGS_BACKGROUND_ALPHA),
+                            shape = MaterialTheme.shapes.small
                         ),
                     contentAlignment = Alignment.Center
                 ) {
                     Row(
-                        modifier = Modifier.padding(5.dp),
+                        modifier = Modifier.padding(MaterialTheme.spacing.smallPadding),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
                             painter = painterResource(id = R.drawable.ic_imdb),
-                            contentDescription = null
+                            contentDescription = null,
                         )
                         Text(
-                            modifier = Modifier.padding(start = 3.dp),
+                            modifier = Modifier.padding(start = MaterialTheme.spacing.smallTextPadding),
                             text = seriesCard.imdbRating.toString(),
                             color = Color.White,
                             fontSize = 8.sp
@@ -129,13 +129,13 @@ fun SeriesCard(seriesCard: SeriesCard) {
                 Box(
                     modifier = Modifier
                         .background(
-                            color = Color.Gray.copy(alpha = 0.7f),
-                            shape = RoundedCornerShape(8.dp)
+                            color = Color.Gray.copy(alpha = POSTER_TAGS_BACKGROUND_ALPHA),
+                            shape = MaterialTheme.shapes.small
                         ),
                     contentAlignment = Alignment.Center
                 ) {
                     Row(
-                        modifier = Modifier.padding(5.dp),
+                        modifier = Modifier.padding(MaterialTheme.spacing.smallPadding),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
@@ -143,7 +143,7 @@ fun SeriesCard(seriesCard: SeriesCard) {
                             contentDescription = null,
                         )
                         Text(
-                            modifier = Modifier.padding(start = 3.dp),
+                            modifier = Modifier.padding(start = MaterialTheme.spacing.smallTextPadding),
                             text = seriesCard.kinopoiskRating.toString(),
                             color = Color.White,
                             fontSize = 8.sp

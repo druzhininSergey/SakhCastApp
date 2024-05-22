@@ -4,7 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -25,10 +27,12 @@ import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.R
 import com.example.sakhcastapp.data.Samples
 import com.example.sakhcastapp.model.MovieCard
+import com.example.sakhcastapp.ui.POSTER_TAGS_BACKGROUND_ALPHA
+import com.example.sakhcastapp.ui.theme.spacing
 
 @Preview(showBackground = true)
 @Composable
-fun Preview2() {
+fun PreviewContinueWatchFilmView() {
     ContinueWatchFilmView(movieCard = Samples.getOneMovie())
 }
 
@@ -37,9 +41,9 @@ fun Preview2() {
 fun ContinueWatchFilmView(movieCard: MovieCard) {
     Card(
         modifier = Modifier
-            .height(234.dp)
-            .width(416.dp)
-            .padding(16.dp),
+            .fillMaxWidth()
+            .aspectRatio(960f / 540f)
+            .padding(MaterialTheme.spacing.mainPadding),
     ) {
         Box {
             Image(
@@ -50,12 +54,20 @@ fun ContinueWatchFilmView(movieCard: MovieCard) {
             )
             Column(
                 Modifier
-                    .padding(start = 6.dp, bottom = 6.dp)
-                    .background(
-                        color = Color.Gray.copy(alpha = 0.8f),
-                        shape = RoundedCornerShape(8.dp)
+                    .padding(
+                        start = MaterialTheme.spacing.mainPaddingHalf,
+                        bottom = MaterialTheme.spacing.mainPaddingHalf
                     )
-                    .padding(start = 8.dp, end = 8.dp, top = 4.dp, bottom = 4.dp)
+                    .background(
+                        color = Color.Gray.copy(alpha = POSTER_TAGS_BACKGROUND_ALPHA),
+                        shape = MaterialTheme.shapes.small
+                    )
+                    .padding(
+                        start = MaterialTheme.spacing.mainPaddingHalf,
+                        end = MaterialTheme.spacing.mainPaddingHalf,
+                        top = MaterialTheme.spacing.smallPadding,
+                        bottom = MaterialTheme.spacing.smallPadding
+                    )
                     .align(Alignment.BottomStart)
             ) {
                 Text(

@@ -11,3 +11,5 @@ const val MOVIE_CATEGORY_SCREEN = "film_category_screen"
 const val SERIES_CATEGORY_SCREEN = "series_category_screen"
 const val MOVIE_VIEW = "movie_view"
 const val SERIES_VIEW = "series_view"
+
+const val POSTER_TAGS_BACKGROUND_ALPHA = 0.8f

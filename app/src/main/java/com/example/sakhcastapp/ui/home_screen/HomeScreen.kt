@@ -16,9 +16,9 @@ import com.example.sakhcastapp.ui.main_screens.home_screen.series.SeriesCategory
 
 @Composable
 fun HomeScreen(paddingValues: PaddingValues) {
+    val scrollState = rememberScrollState()
     val seriesList = Samples.getAllSeries()
     val movieList = Samples.getAllMovies()
-    val scrollState = rememberScrollState()
 
     Column(
         modifier = Modifier

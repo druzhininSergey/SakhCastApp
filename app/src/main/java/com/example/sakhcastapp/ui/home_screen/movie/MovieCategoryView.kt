@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,11 +18,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.model.MovieCard
+import com.example.sakhcastapp.ui.theme.spacing
 
 @Composable
 fun MovieCategoryView(movieCardList: List<MovieCard>) {
     Row(
-        modifier = Modifier.padding(top = 16.dp, start = 16.dp),
+        modifier = Modifier.padding(
+            top = MaterialTheme.spacing.mainPadding,
+            start = MaterialTheme.spacing.mainPadding
+        ),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
@@ -31,15 +36,21 @@ fun MovieCategoryView(movieCardList: List<MovieCard>) {
             fontSize = 20.sp
         )
         Icon(
-            modifier = Modifier.padding(top = 4.dp, start = 5.dp),
+            modifier = Modifier.padding(
+                top = MaterialTheme.spacing.smallPadding,
+                start = MaterialTheme.spacing.smallPadding
+            ),
             imageVector = Icons.Filled.KeyboardArrowRight,
             contentDescription = null
         )
     }
     LazyRow(
-        modifier = Modifier.padding(top = 16.dp),
-        contentPadding = PaddingValues(start = 16.dp, end = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+        modifier = Modifier.padding(top = MaterialTheme.spacing.mainPadding),
+        contentPadding = PaddingValues(
+            start = MaterialTheme.spacing.mainPadding,
+            end = MaterialTheme.spacing.mainPadding
+        ),
+        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.mainPadding)
     ) {
         itemsIndexed(movieCardList) { _, item ->
             MovieItemView(movieCard = item)

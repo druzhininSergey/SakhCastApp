@@ -9,19 +9,20 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.model.SeriesCard
+import com.example.sakhcastapp.ui.theme.spacing
 
 @Composable
 fun SeriesCategoryView(seriesCardList: List<SeriesCard>) {
     Row(
-        modifier = Modifier.padding(start = 16.dp),
+        modifier = Modifier.padding(start = MaterialTheme.spacing.mainPadding),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
@@ -31,15 +32,21 @@ fun SeriesCategoryView(seriesCardList: List<SeriesCard>) {
             fontSize = 20.sp
         )
         Icon(
-            modifier = Modifier.padding(top = 4.dp, start = 5.dp),
+            modifier = Modifier.padding(
+                top = MaterialTheme.spacing.smallPadding,
+                start = MaterialTheme.spacing.smallPadding
+            ),
             imageVector = Icons.Filled.KeyboardArrowRight,
             contentDescription = null
         )
     }
     LazyRow(
-        modifier = Modifier.padding(top = 16.dp),
-        contentPadding = PaddingValues(start = 16.dp, end = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+        modifier = Modifier.padding(top = MaterialTheme.spacing.mainPadding),
+        contentPadding = PaddingValues(
+            start = MaterialTheme.spacing.mainPadding,
+            end = MaterialTheme.spacing.mainPadding
+        ),
+        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.mainPadding)
     ) {
         itemsIndexed(seriesCardList) { _, item ->
             SeriesItemView(seriesCard = item)

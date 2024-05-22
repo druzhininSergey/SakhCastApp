@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,12 +29,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.R
 import com.example.sakhcastapp.model.MovieCard
+import com.example.sakhcastapp.ui.POSTER_TAGS_BACKGROUND_ALPHA
 import com.example.sakhcastapp.ui.theme.SakhCastAppTheme
+import com.example.sakhcastapp.ui.theme.spacing
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewMovieItemView() {
-    SakhCastAppTheme(darkTheme = true) {
+    SakhCastAppTheme() {
         MovieItemView(
             movieCard = MovieCard(
                 id = 1,
@@ -57,7 +60,7 @@ fun MovieItemView(movieCard: MovieCard) {
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.spacing.smallPadding))
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
@@ -76,7 +79,7 @@ fun MovieCard(movieCard: MovieCard) {
         modifier = Modifier
             .width(150.dp)
             .height(220.dp),
-        shape = RoundedCornerShape(10.dp),
+        shape = MaterialTheme.shapes.small,
         colors = CardDefaults.cardColors(),
     ) {
         Box {
@@ -89,20 +92,20 @@ fun MovieCard(movieCard: MovieCard) {
             )
             Row(
                 modifier = Modifier
-                    .padding(8.dp)
+                    .padding(MaterialTheme.spacing.mainPaddingHalf)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
-                ) {
+            ) {
                 Box(
                     modifier = Modifier
                         .background(
-                            color = Color.Gray.copy(alpha = 0.8f),
-                            shape = RoundedCornerShape(8.dp)
+                            color = Color.Gray.copy(alpha = POSTER_TAGS_BACKGROUND_ALPHA),
+                            shape = MaterialTheme.shapes.small
                         ),
                     contentAlignment = Alignment.Center
                 ) {
                     Row(
-                        modifier = Modifier.padding(5.dp),
+                        modifier = Modifier.padding(MaterialTheme.spacing.smallPadding),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
@@ -110,7 +113,7 @@ fun MovieCard(movieCard: MovieCard) {
                             contentDescription = null
                         )
                         Text(
-                            modifier = Modifier.padding(start = 3.dp),
+                            modifier = Modifier.padding(start = MaterialTheme.spacing.smallTextPadding),
                             text = movieCard.imdbRating.toString(),
                             color = Color.White,
                             fontSize = 8.sp
@@ -120,13 +123,13 @@ fun MovieCard(movieCard: MovieCard) {
                 Box(
                     modifier = Modifier
                         .background(
-                            color = Color.Gray.copy(alpha = 0.7f),
-                            shape = RoundedCornerShape(8.dp)
+                            color = Color.Gray.copy(alpha = POSTER_TAGS_BACKGROUND_ALPHA),
+                            shape = MaterialTheme.shapes.small
                         ),
                     contentAlignment = Alignment.Center
                 ) {
                     Row(
-                        modifier = Modifier.padding(5.dp),
+                        modifier = Modifier.padding(MaterialTheme.spacing.smallPadding),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
@@ -134,7 +137,7 @@ fun MovieCard(movieCard: MovieCard) {
                             contentDescription = null,
                         )
                         Text(
-                            modifier = Modifier.padding(start = 3.dp),
+                            modifier = Modifier.padding(start = MaterialTheme.spacing.smallTextPadding),
                             text = movieCard.kinopoiskRating.toString(),
                             color = Color.White,
                             fontSize = 8.sp
