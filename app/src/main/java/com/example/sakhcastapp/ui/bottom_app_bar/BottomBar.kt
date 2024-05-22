@@ -1,4 +1,4 @@
-package com.example.sakhcastapplication.ui.top_bottom_bars.bottom_app_bar
+package com.example.sakhcastapp.ui.top_bottom_bars.bottom_app_bar
 
 import androidx.compose.foundation.background
 import androidx.compose.material3.BottomAppBar
