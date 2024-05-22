@@ -15,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sakhcastapp.model.MovieCard
 import com.example.sakhcastapp.ui.theme.spacing
@@ -45,7 +44,10 @@ fun MovieCategoryView(movieCardList: List<MovieCard>) {
         )
     }
     LazyRow(
-        modifier = Modifier.padding(top = MaterialTheme.spacing.mainPadding),
+        modifier = Modifier.padding(
+            top = MaterialTheme.spacing.mainPadding,
+            bottom = MaterialTheme.spacing.mainPadding
+        ),
         contentPadding = PaddingValues(
             start = MaterialTheme.spacing.mainPadding,
             end = MaterialTheme.spacing.mainPadding

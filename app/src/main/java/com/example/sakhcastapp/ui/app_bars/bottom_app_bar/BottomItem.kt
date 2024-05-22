@@ -1,4 +1,4 @@
-package com.example.sakhcastapp.ui.top_bottom_bars.bottom_app_bar
+package com.example.sakhcastapp.ui.app_bars.bottom_app_bar
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
