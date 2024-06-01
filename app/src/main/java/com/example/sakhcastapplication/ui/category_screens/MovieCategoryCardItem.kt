@@ -2,6 +2,7 @@ package com.example.sakhcastapplication.ui.category_screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,31 +28,33 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.example.sakhcastapplication.MOVIE_VIEW
 import com.example.sakhcastapplication.R
 import com.example.sakhcastapplication.model.MovieCard
-import com.example.sakhcastapplication.model.SeriesCard
 import com.example.sakhcastapplication.ui.theme.SakhCastApplicationTheme
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewMovieCategoryCardItem() {
-    SakhCastApplicationTheme() {
-        MovieCategoryCardItem(
-            movieCard = MovieCard(
-                id = 1,
-                ruTitle = "Фильм 1",
-                imdbRating = 9.0,
-                kinopoiskRating = 10.0,
-                releaseDate = "2022",
-                duration = "1час 34мин"
-            )
-        )
-    }
+//    SakhCastApplicationTheme() {
+//        MovieCategoryCardItem(
+//            movieCard = MovieCard(
+//                id = 1,
+//                ruTitle = "Фильм 1",
+//                imdbRating = 9.0,
+//                kinopoiskRating = 10.0,
+//                releaseDate = "2022",
+//                duration = "1час 34мин"
+//            ),
+//            navHostController = navHostController
+//        )
+//    }
 }
 
 @Composable
-fun MovieCategoryCardItem(movieCard: MovieCard) {
-    Box() {
+fun MovieCategoryCardItem(movieCard: MovieCard, navHostController: NavHostController) {
+    Box(modifier = Modifier.clickable { navHostController.navigate(MOVIE_VIEW) }) {
         Column() {
             MovieCategoryCard(movieCard)
             Text(

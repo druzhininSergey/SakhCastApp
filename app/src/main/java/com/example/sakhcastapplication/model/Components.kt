@@ -32,7 +32,6 @@ data class MovieCard(
     val available: Boolean? = null,
 )
 
-
 data class Notification(
     val id: Int? = null,
     val date: String? = null,

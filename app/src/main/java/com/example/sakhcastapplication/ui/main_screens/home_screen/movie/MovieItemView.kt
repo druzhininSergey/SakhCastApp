@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -55,7 +56,8 @@ fun MovieItemView(movieCard: MovieCard) {
             Text(
                 text = movieCard.ruTitle,
                 fontSize = 12.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onPrimary
             )
             Spacer(modifier = Modifier.height(4.dp))
             Row(
@@ -63,8 +65,16 @@ fun MovieItemView(movieCard: MovieCard) {
                 modifier = Modifier
                     .width(150.dp)
             ) {
-                Text(text = movieCard.releaseDate.toString(), fontSize = 12.sp)
-                Text(text = movieCard.duration, fontSize = 12.sp)
+                Text(
+                    text = movieCard.releaseDate.toString(),
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onPrimary
+                )
+                Text(
+                    text = movieCard.duration,
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onPrimary
+                )
             }
         }
     }
@@ -92,7 +102,7 @@ fun MovieCard(movieCard: MovieCard) {
                     .padding(8.dp)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
-                ) {
+            ) {
                 Box(
                     modifier = Modifier
                         .background(

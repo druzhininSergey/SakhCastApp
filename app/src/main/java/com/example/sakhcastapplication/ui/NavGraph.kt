@@ -19,12 +19,12 @@ import com.example.sakhcastapplication.ui.category_screens.MovieCategoryScreen
 import com.example.sakhcastapplication.ui.category_screens.SeriesCategoryScreen
 import com.example.sakhcastapplication.ui.log_in_screen.LogInScreen
 import com.example.sakhcastapplication.ui.main_screens.catalog_screen.CatalogScreen
-import com.example.sakhcastapplication.ui.movie_series_view.MovieView
-import com.example.sakhcastapplication.ui.movie_series_view.SeriesView
 import com.example.sakhcastapplication.ui.main_screens.favorites_screen.FavoritesScreen
 import com.example.sakhcastapplication.ui.main_screens.home_screen.HomeScreen
 import com.example.sakhcastapplication.ui.main_screens.notifications_screen.NotificationScreen
 import com.example.sakhcastapplication.ui.main_screens.search_screen.SearchScreen
+import com.example.sakhcastapplication.ui.movie_series_view.MovieView
+import com.example.sakhcastapplication.ui.movie_series_view.SeriesView
 
 @Composable
 fun NavGraph(
@@ -54,16 +54,16 @@ fun NavGraph(
             SearchScreen()
         }
         composable(MOVIE_VIEW) {
-            MovieView()
+            MovieView(paddingValues)
         }
         composable(SERIES_VIEW) {
-            SeriesView()
+            SeriesView(paddingValues)
         }
-        composable(MOVIE_CATEGORY_SCREEN){
-            MovieCategoryScreen(paddingValues)
+        composable(MOVIE_CATEGORY_SCREEN) {
+            MovieCategoryScreen(paddingValues, navHostController)
         }
-        composable(SERIES_CATEGORY_SCREEN){
-            SeriesCategoryScreen(paddingValues)
+        composable(SERIES_CATEGORY_SCREEN) {
+            SeriesCategoryScreen(paddingValues, navHostController)
         }
     }
 }

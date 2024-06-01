@@ -12,12 +12,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import com.example.sakhcastapplication.Dimens
 import com.example.sakhcastapplication.data.Samples
 
 @Preview(showBackground = true)
 @Composable
-fun SeriesCategoryScreen(paddingValues: PaddingValues) {
+fun SeriesCategoryScreen(paddingValues: PaddingValues, navHostController: NavHostController) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = Modifier
@@ -29,7 +30,7 @@ fun SeriesCategoryScreen(paddingValues: PaddingValues) {
         contentPadding = PaddingValues(Dimens.mainPadding)
     ) {
         itemsIndexed(Samples.getAllSeries()) { _, series ->
-            SeriesCategoryCardItem(series)
+            SeriesCategoryCardItem(series, navHostController)
         }
     }
 }

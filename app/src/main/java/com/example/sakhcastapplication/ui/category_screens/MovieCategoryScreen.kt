@@ -12,13 +12,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import com.example.sakhcastapplication.Dimens
 import com.example.sakhcastapplication.data.Samples
 
 
 @Preview(showBackground = true)
 @Composable
-fun MovieCategoryScreen(paddingValues: PaddingValues) {
+fun MovieCategoryScreen(paddingValues: PaddingValues, navHostController: NavHostController) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = Modifier
@@ -30,7 +31,7 @@ fun MovieCategoryScreen(paddingValues: PaddingValues) {
         contentPadding = PaddingValues(Dimens.mainPadding)
     ) {
         itemsIndexed(Samples.getAllMovies()) { _, movie ->
-            MovieCategoryCardItem(movie)
+            MovieCategoryCardItem(movie, navHostController)
         }
     }
 }
